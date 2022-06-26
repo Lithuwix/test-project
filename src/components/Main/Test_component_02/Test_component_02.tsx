@@ -1,5 +1,5 @@
 import React, {ChangeEvent, useState, KeyboardEvent} from 'react';
-import { v1 } from 'uuid';
+import {v1} from 'uuid';
 
 type NameArrType = {
     id: string
@@ -19,18 +19,17 @@ export const TestComponent02 = () => {
     }
 
     const onKeyPresHandler = (e: KeyboardEvent<HTMLInputElement>) => {
-        if (e.key === 'Enter') onClickHandler()
+        if (e.key === 'Enter' && !!valueName) onClickHandler()
         else return
     }
 
     return (
         <div>
             <input value={valueName} onChange={onChangeHandler} onKeyPress={onKeyPresHandler}/>
-            <button onClick={onClickHandler}>New name</button>
+            <button disabled={!valueName} onClick={onClickHandler}>New name</button>
             <ul>
                 {nameArr.map(el => <li>{el.name}</li>)}
             </ul>
-
         </div>
     );
 };
