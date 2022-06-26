@@ -11,12 +11,19 @@ export const TestComponent02 = () => {
     const [nameArr, setNameArr] = useState<Array<NameArrType>>([])
     const [valueName, setValueName] = useState<string>('')
 
-    const oChangeHandler = (e: ChangeEvent<HTMLInputElement>) => setValueName(e.currentTarget.value)
+    const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => setValueName(e.currentTarget.value)
+
+    const onClickHandler = () => {
+        setNameArr([{id: v1(), name: valueName}, ...nameArr])
+        setValueName('')
+    }
+
+
 
     return (
         <div>
-            <input value={valueName} onChange={oChangeHandler}/>
-            <button>New name</button>
+            <input value={valueName} onChange={onChangeHandler}/>
+            <button onClick={onClickHandler}>New name</button>
             <ul>
                 {nameArr.map(el => <li>{el.name}</li>)}
             </ul>
