@@ -9,9 +9,14 @@ import {TestComponent02} from "./components/Main/Test_component_02/Test_componen
 function App() {
     return (
         <div className="App">
-            <Header/>
-            <Nav/>
-            <div> {/* этот div я бы хотела заменить на компоненту, которая внутри себя содержит -Routes- */}
+            <div className={'header'}>
+                <Header/>
+            </div>
+            <div className={'nav'}>
+                <Nav/>
+            </div>
+            <div
+                className={"routes"}> {/* этот div я бы хотела заменить на компоненту, которая внутри себя содержит -Routes- */}
                 <Routes>
                     <Route path={'/test1'} element={<TestComponent01/>}/>
                     <Route path={'/test2'} element={<TestComponent02/>}/>

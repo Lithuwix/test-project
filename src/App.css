@@ -1,0 +1,26 @@
+.App {
+    margin: 0 auto;
+    width: 1200px;
+    display: grid;
+    grid-template-areas:
+    "header header"
+    "nav routes";
+    grid-template-rows: 60px 1fr;
+    grid-auto-columns: 2fr 10fr;
+    grid-gap: 10px;
+}
+
+.header {
+    grid-area: header;
+    background-color: cadetblue;
+}
+
+.nav {
+    grid-area: nav;
+    background-color: cadetblue;
+}
+
+.routes {
+    grid-area: routes;
+    background-color: cadetblue;
+}
