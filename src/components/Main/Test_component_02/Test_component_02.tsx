@@ -1,4 +1,4 @@
-import React, {ChangeEvent, useState} from 'react';
+import React, {ChangeEvent, useState, KeyboardEvent} from 'react';
 import { v1 } from 'uuid';
 
 type NameArrType = {
@@ -18,11 +18,14 @@ export const TestComponent02 = () => {
         setValueName('')
     }
 
-
+    const onKeyPresHandler = (e: KeyboardEvent<HTMLInputElement>) => {
+        if (e.key === 'Enter') onClickHandler()
+        else return
+    }
 
     return (
         <div>
-            <input value={valueName} onChange={onChangeHandler}/>
+            <input value={valueName} onChange={onChangeHandler} onKeyPress={onKeyPresHandler}/>
             <button onClick={onClickHandler}>New name</button>
             <ul>
                 {nameArr.map(el => <li>{el.name}</li>)}
