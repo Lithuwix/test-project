@@ -12,9 +12,14 @@ import {Error404} from './components/Main/Error404/Error404';
 function App() {
     return (
         <div className="App">
-            <Header/>
-            <Nav/>
-            <div> {/* этот div я бы хотела заменить на компоненту, которая внутри себя содержит -Routes- */}
+            <div className={'header'}>
+                <Header/>
+            </div>
+            <div className={'nav'}>
+                <Nav/>
+            </div>
+            <div
+                className={"routes"}> {/* этот div я бы хотела заменить на компоненту, которая внутри себя содержит -Routes- */}
                 <Routes>
                     <Route path={'/*'} element={<Error404/>}/>
                     <Route path={'/test1'} element={<TestComponent01/>}/>
