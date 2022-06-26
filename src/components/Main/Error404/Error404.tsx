@@ -1,9 +1,9 @@
 import React from 'react';
 
-export const TestComponent04 = () => {
+export const Error404 = () => {
     return (
         <div>
-            test4
+            <h1>Error 404</h1>
         </div>
     );
 };
