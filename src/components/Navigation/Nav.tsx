@@ -5,7 +5,7 @@ export const Nav = () => {
     return (
         <nav>
             <div><Link to='/test1'>test 1</Link></div>
-            <div><Link to='/test2'>test 2</Link></div>
+            <div><Link to='/test2'>Branch-Vova</Link></div>
         </nav>
     );
 }
